@@ -1,0 +1,15 @@
+python3 src/train_softmax.py \
+--logs_base_dir ~/logs/facenet/ \
+--models_base_dir ~/models/facenet/ \
+--data_dir ~/data/rgb_classifier_train/ \
+--image_size 224 \
+--model_def models.inception_resnet_v1 \
+--optimizer ADAM \
+--learning_rate -1 \
+--max_nrof_epochs 150 \
+--keep_probability 0.8 \
+--random_flip \
+--learning_rate_schedule_file data/learning_rate_schedule_classifier_casia.txt \
+--weight_decay 5e-4 \
+--embedding_size 512 \
+--prelogits_norm_loss_factor 5e-4
